@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ILO_REPORT", "ILO_REPORT\ILO_REPORT.csproj", "{8FDE7BB5-790F-40D1-B766-D0E6326CD5BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dbHandler", "dbHandler\dbHandler.csproj", "{8C01C2E8-4DF9-40AF-BE6A-15C2C463ED03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FDE7BB5-790F-40D1-B766-D0E6326CD5BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FDE7BB5-790F-40D1-B766-D0E6326CD5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FDE7BB5-790F-40D1-B766-D0E6326CD5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FDE7BB5-790F-40D1-B766-D0E6326CD5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C01C2E8-4DF9-40AF-BE6A-15C2C463ED03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C01C2E8-4DF9-40AF-BE6A-15C2C463ED03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C01C2E8-4DF9-40AF-BE6A-15C2C463ED03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C01C2E8-4DF9-40AF-BE6A-15C2C463ED03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

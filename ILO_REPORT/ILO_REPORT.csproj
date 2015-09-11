@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FDE7BB5-790F-40D1-B766-D0E6326CD5BF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ILO_REPORT</RootNamespace>
+    <AssemblyName>ILO_REPORT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="businessLayer\businessClass.cs" />
+    <Compile Include="config\Global.cs" />
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportChildLabourType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportChildLabourType.Designer.cs">
+      <DependentUpon>reportChildLabourType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportEmployer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportEmployer.Designer.cs">
+      <DependentUpon>reportEmployer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportChilLabourIndividualDetails_Kha.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportChilLabourIndividualDetails_Kha.Designer.cs">
+      <DependentUpon>reportChilLabourIndividualDetails_Kha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportFilter.Designer.cs">
+      <DependentUpon>reportFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportEducationCertificateStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportEducationCertificateStatus.Designer.cs">
+      <DependentUpon>reportEducationCertificateStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportHealthFacility_Ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportHealthFacility_Ka.Designer.cs">
+      <DependentUpon>reportHealthFacility_Ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportFacility_Ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportFacility_Ka.Designer.cs">
+      <DependentUpon>reportFacility_Ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportChilLabourIndividualDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportChilLabourIndividualDetails.Designer.cs">
+      <DependentUpon>reportChilLabourIndividualDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportLabourNoReturnHome_Ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportLabourNoReturnHome_Ka.Designer.cs">
+      <DependentUpon>reportLabourNoReturnHome_Ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportLabourLeaveHomeHow_Ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportLabourLeaveHomeHow_Ka.Designer.cs">
+      <DependentUpon>reportLabourLeaveHomeHow_Ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportHateWay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportHateWay.Designer.cs">
+      <DependentUpon>reportHateWay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportWorkingTimeME.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportWorkingTimeME.Designer.cs">
+      <DependentUpon>reportWorkingTimeME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportWorkingStart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportWorkingStart.Designer.cs">
+      <DependentUpon>reportWorkingStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportWorkingHour.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportWorkingHour.Designer.cs">
+      <DependentUpon>reportWorkingHour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportBirthRegistration_ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportBirthRegistration_ka.Designer.cs">
+      <DependentUpon>reportBirthRegistration_ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportFamilyContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportFamilyContact.Designer.cs">
+      <DependentUpon>reportFamilyContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportSalaryTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportSalaryTime.Designer.cs">
+      <DependentUpon>reportSalaryTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportSalaryReceiver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportSalaryReceiver.Designer.cs">
+      <DependentUpon>reportSalaryReceiver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportSalary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportSalary.Designer.cs">
+      <DependentUpon>reportSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportEducationExpense.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportEducationExpense.Designer.cs">
+      <DependentUpon>reportEducationExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportEducationStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportEducationStatus.Designer.cs">
+      <DependentUpon>reportEducationStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportReligion_Child.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportReligion_Child.Designer.cs">
+      <DependentUpon>reportReligion_Child.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportCast_Child.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportCast_Child.Designer.cs">
+      <DependentUpon>reportCast_Child.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportChildLabourStatus_ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportChildLabourStatus_ka.Designer.cs">
+      <DependentUpon>reportChildLabourStatus_ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportJobAgreementPoints.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportJobAgreementPoints.Designer.cs">
+      <DependentUpon>reportJobAgreementPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportLabourTaken.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportLabourTaken.Designer.cs">
+      <DependentUpon>reportLabourTaken.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportInidvidual_ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportInidvidual_ka.Designer.cs">
+      <DependentUpon>reportInidvidual_ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportLabourWentHow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportLabourWentHow.Designer.cs">
+      <DependentUpon>reportLabourWentHow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportCast_ga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportCast_ga.Designer.cs">
+      <DependentUpon>reportCast_ga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportFamilyInfo_ga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportFamilyInfo_ga.Designer.cs">
+      <DependentUpon>reportFamilyInfo_ga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportEducation_ka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportEducation_ka.Designer.cs">
+      <DependentUpon>reportEducation_ka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportJobAgreement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportJobAgreement.Designer.cs">
+      <DependentUpon>reportJobAgreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportAgeGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportAgeGroup.Designer.cs">
+      <DependentUpon>reportAgeGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportStayType_Child.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportStayType_Child.Designer.cs">
+      <DependentUpon>reportStayType_Child.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportStayType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportStayType.Designer.cs">
+      <DependentUpon>reportStayType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportReligion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportReligion.Designer.cs">
+      <DependentUpon>reportReligion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportOccupation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportOccupation.Designer.cs">
+      <DependentUpon>reportOccupation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\ucAdministration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\ucAdministration.Designer.cs">
+      <DependentUpon>ucAdministration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myControls\reportLabourCause.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="myControls\reportLabourCause.Designer.cs">
+      <DependentUpon>reportLabourCause.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\myMasters\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\myMasters\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmCompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmCompanyInfo.Designer.cs">
+      <DependentUpon>frmCompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmManageUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmManageUser.designer.cs">
+      <DependentUpon>frmManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmNewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="myForms\myMasters\frmNewUser.designer.cs">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="utilityClass\DataGridViewGridComboBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="utilityClass\GridComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportChildLabourType.resx">
+      <DependentUpon>reportChildLabourType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportEmployer.resx">
+      <DependentUpon>reportEmployer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportChilLabourIndividualDetails_Kha.resx">
+      <DependentUpon>reportChilLabourIndividualDetails_Kha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportFilter.resx">
+      <DependentUpon>reportFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportEducationCertificateStatus.resx">
+      <DependentUpon>reportEducationCertificateStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportHealthFacility_Ka.resx">
+      <DependentUpon>reportHealthFacility_Ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportFacility_Ka.resx">
+      <DependentUpon>reportFacility_Ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportChilLabourIndividualDetails.resx">
+      <DependentUpon>reportChilLabourIndividualDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportLabourNoReturnHome_Ka.resx">
+      <DependentUpon>reportLabourNoReturnHome_Ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportLabourLeaveHomeHow_Ka.resx">
+      <DependentUpon>reportLabourLeaveHomeHow_Ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportHateWay.resx">
+      <DependentUpon>reportHateWay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportWorkingTimeME.resx">
+      <DependentUpon>reportWorkingTimeME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportWorkingStart.resx">
+      <DependentUpon>reportWorkingStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportWorkingHour.resx">
+      <DependentUpon>reportWorkingHour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportBirthRegistration_ka.resx">
+      <DependentUpon>reportBirthRegistration_ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportFamilyContact.resx">
+      <DependentUpon>reportFamilyContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportSalaryTime.resx">
+      <DependentUpon>reportSalaryTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportSalaryReceiver.resx">
+      <DependentUpon>reportSalaryReceiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportSalary.resx">
+      <DependentUpon>reportSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportEducationExpense.resx">
+      <DependentUpon>reportEducationExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportEducationStatus.resx">
+      <DependentUpon>reportEducationStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportReligion_Child.resx">
+      <DependentUpon>reportReligion_Child.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportCast_Child.resx">
+      <DependentUpon>reportCast_Child.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportChildLabourStatus_ka.resx">
+      <DependentUpon>reportChildLabourStatus_ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportJobAgreementPoints.resx">
+      <DependentUpon>reportJobAgreementPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportLabourTaken.resx">
+      <DependentUpon>reportLabourTaken.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportInidvidual_ka.resx">
+      <DependentUpon>reportInidvidual_ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportLabourWentHow.resx">
+      <DependentUpon>reportLabourWentHow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportCast_ga.resx">
+      <DependentUpon>reportCast_ga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportFamilyInfo_ga.resx">
+      <DependentUpon>reportFamilyInfo_ga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportEducation_ka.resx">
+      <DependentUpon>reportEducation_ka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportJobAgreement.resx">
+      <DependentUpon>reportJobAgreement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportAgeGroup.resx">
+      <DependentUpon>reportAgeGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportStayType_Child.resx">
+      <DependentUpon>reportStayType_Child.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportStayType.resx">
+      <DependentUpon>reportStayType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportReligion.resx">
+      <DependentUpon>reportReligion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportOccupation.resx">
+      <DependentUpon>reportOccupation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\ucAdministration.resx">
+      <DependentUpon>ucAdministration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myControls\reportLabourCause.resx">
+      <DependentUpon>reportLabourCause.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\myMasters\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\myMasters\frmCompanyInfo.resx">
+      <DependentUpon>frmCompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\myMasters\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\myMasters\frmManageUser.resx">
+      <DependentUpon>frmManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="myForms\myMasters\frmNewUser.resx">
+      <DependentUpon>frmNewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\btnbgHover.png" />
+    <Content Include="bin\Debug\ILO_REPORT.vshost.exe" />
+    <Content Include="bin\Debug\imsBgBar.png" />
+    <Content Include="bin\Debug\Microsoft.Office.Interop.SmartTag.dll" />
+    <Content Include="bin\Debug\opsBgBar.png" />
+    <Content Include="bin\Debug\opsSettingBar.bmp" />
+    <Content Include="Images\btnbgHover.png" />
+    <Content Include="Images\butOk.Image.png" />
+    <Content Include="Images\Excel-16.gif" />
+    <None Include="Images\logoPictureBox.Image.png" />
+    <Content Include="Images\ops-001.ico" />
+    <Content Include="Images\ops.ico" />
+    <Content Include="Images\ops.png" />
+    <Content Include="Images\opsAdd.png" />
+    <Content Include="Images\opsAddUsrs.png" />
+    <Content Include="Images\opsAdministration.png" />
+    <Content Include="Images\opsApprovalList.png" />
+    <Content Include="Images\opsBgBar.png" />
+    <Content Include="Images\opsBgLogIn.bmp" />
+    <Content Include="Images\opsBookShipping.png" />
+    <Content Include="Images\opsBuyer.png" />
+    <Content Include="Images\opsCancel.png" />
+    <Content Include="Images\opsClear.png" />
+    <Content Include="Images\opsContract.png" />
+    <Content Include="Images\opsCountry.png" />
+    <Content Include="Images\opsEdit.png" />
+    <Content Include="Images\opsExit.png" />
+    <Content Include="Images\opsHelp.png" />
+    <Content Include="Images\opsInvoice.png" />
+    <Content Include="Images\opsLoggedInCard.png" />
+    <Content Include="Images\opsLogIn.png" />
+    <Content Include="Images\opsLogoff.png" />
+    <Content Include="Images\opsManageUsers.png" />
+    <Content Include="Images\opsNotes.png" />
+    <Content Include="Images\opsOfficeAddress.png" />
+    <Content Include="Images\opsOk.ico" />
+    <Content Include="Images\opsPacket.png" />
+    <Content Include="Images\opsPrint.png" />
+    <Content Include="Images\opsProfiles.png" />
+    <Content Include="Images\opsSave.png" />
+    <Content Include="Images\opsSearch.png" />
+    <Content Include="Images\opsSecondSample.png" />
+    <Content Include="Images\opsSeller.png" />
+    <Content Include="Images\opsSettingBar.bmp" />
+    <Content Include="Images\opsShippers.png" />
+    <Content Include="Images\opsStatus.png" />
+    <Content Include="Images\opsTeaAlloc.png" />
+    <Content Include="Images\opsTeaGarden.png" />
+    <Content Include="Images\opsTeaGrade.png" />
+    <None Include="Resources\menuStrip.BackgroundImage.png" />
+    <Content Include="Resources\exitToolStripMenuItem1.Image.png" />
+    <Content Include="Resources\opsBgBar.png" />
+    <None Include="Resources\opsClear.bmp" />
+    <Content Include="Resources\opsClear.png" />
+    <Content Include="Resources\opsInvoice.png" />
+    <Content Include="Resources\opsSave.png" />
+    <Content Include="Resources\opsSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\" />
+    <Folder Include="obj\Release\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dbHandler\dbHandler.csproj">
+      <Project>{8c01c2e8-4df9-40af-be6a-15c2c463ed03}</Project>
+      <Name>dbHandler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
